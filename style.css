@@ -1,0 +1,171 @@
+/*orbit Animation */
+
+
+
+/*Pulsing or fading the star */
+@-webkit-keyframes starPulse{
+    from    {opacity: 1; }
+    to      {opacity: 0.2; }
+}
+@-moz-keyframes starPulse{
+    from{opacity: 1; }
+    to{opacity: 0.2; }
+}
+@-o-keyframes starPulse{
+    from{opacity: 1; }
+    to{opacity: 0.2; }
+}
+@keyframes starPulse{
+    from{opacity: 1; }
+    to{opacity: 0.2; }
+}
+
+/*fire sun or fading the star */
+
+-webkit-@keyframes sunFire{
+    from    {
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+        -moz-box-shadow: 0 0 50px #f5c91a;
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+    };
+    to  {
+         -webkit-box-shadow: 0 0 100px #f5c91a;
+        -moz-box-shadow: 0 0 100px #f5c91a;
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+    };
+}
+-moz-@keyframes sunFire{
+    from    {
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+        -moz-box-shadow: 0 0 50px #f5c91a;
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+    };
+    to  {
+         -webkit-box-shadow: 0 0 100px #f5c91a;
+        -moz-box-shadow: 0 0 100px #f5c91a;
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+    };
+}
+@keyframes sunFire{
+    from    {
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+        -moz-box-shadow: 0 0 50px #f5c91a;
+        -webkit-box-shadow: 0 0 50px #f5c91a;
+    };
+    to  {
+         -webkit-box-shadow: 0 0 100px #f5c91a;
+        -moz-box-shadow: 0 0 100px #f5c91a;
+        -webkit-box-shadow: 0 0 100px #f5c91a;
+    };
+}
+
+
+
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#universe {
+    background: black; 
+    background: -webkit-radial-gradient(#555, #000);
+    background: -op-radial-gradient(#555, #000);
+    background: -moz-radial-gradient(#555, #000);
+    background: radial-gradient(#555, #000);
+}
+#stars{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-image: url(image/stars.png);
+    
+   /*cross browser compatible animation*/
+    /*animation name, duration, for how long, end to b b to end sooth touch*/
+    -webkit-animation: starPuls 4s infinite alternate;
+    -moz-animation: starPuls 4s infinite alternate;
+    -o-animation: starPuls 4s infinite alternate;
+    animation: starPuls 4s infinite alternate;
+}
+
+#sun{
+    /*position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index:4;
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    
+    /*To make it round */
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius:100%;
+    
+    /*to make it gradient background */
+    background: orange;
+    background: -webkit-radial-gradient(#f5c313, #ec7e08);
+    background: -op-radial-gradient(#f5c313, #ec7e08);
+    background: -moz-radial-gradient(#f5c313, #ec7e08);
+    
+    /*to make it glow box shadow / first horizontal/ vertical/ 50px blur and clolr */
+    
+    -webkit-box-shadow:0 0 50px #f5c91a;
+    -moz-box-shadow:0 0 50px #f5c91a;
+    box-shadow:0 0 50px #f5c91a;
+    
+    -webkit-animation: sunFire 4s infinite alternate;
+    -moz-animation: sunFire 4s infinite alternate;
+    animation: sunFire 4s infinite alternate;
+}
+#earthOrbit{
+    border: solid 1px red;
+    position: absolute;
+    z-index: 4;
+    margin-top: -300px;
+    margin-left: -300px;
+    top: 50%;
+    left: 50%;
+      /*to make none perfect circle */
+    height: 700px;
+    width: 600px;
+    /*border radious */
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+    -moz-border-radius: 100%;
+}
+#earth{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -50px;
+}
+
+#moonOrbit{
+    border: solid 1px red;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: -30;
+    margin-top: -80px;
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+    -moz-border-radius: 100%;
+}
+
+#moon {
+    
+    height: 20px;
+    width: 20px;
+    background: gray;
+    background: -webkit-radial-gradient(#ddd, #888);
+    background: -o-radial-gradient(#ddd, #888);
+    background: -moz-radial-gradient(#ddd, #888);
+    border-radius: 100%
+}
